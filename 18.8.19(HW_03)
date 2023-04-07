@@ -1,0 +1,20 @@
+list_tickets = [ticket for ticket in range(1, int(input("Кол-во билет для покупки: ")) + 1)]
+
+list_age = []
+sum_ticket = 0
+for ticket in list_tickets:
+    list_age.append(int(input("Введите возраст: ")))
+
+for age in list_age:
+    if age < 18:
+        sum_ticket += 0
+    elif 18 <= age <= 25:
+        sum_ticket += 990
+    elif age > 25:
+        sum_ticket += 1390
+
+if len(list_tickets) > 3:
+    sum_ticket = sum_ticket * 0.9
+    print(f'Сумма покупки билетов на {len(list_tickets)} персон со скидкой составила: {sum_ticket} руб.')
+else:
+    print(f'Сумма покупки билетов на {len(list_tickets)} персон составила: {sum_ticket} руб.')
